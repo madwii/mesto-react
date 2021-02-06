@@ -148,7 +148,7 @@ function App() {
       <PopupWithForm
         onClose={closeAllPopups}
         title="Вы уверены?"
-        name="delete-place"
+        name="confirm"
         isOpen={false}
         onSubmit={`Да`}
       ></PopupWithForm>
