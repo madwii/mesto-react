@@ -1,4 +1,4 @@
-export default class Api {
+class Api {
   constructor({ baseUrl, userId, headers }) {
     this._baseUrl = baseUrl;
     this._headers = headers;
@@ -101,7 +101,7 @@ export default class Api {
 }
 
 
-export const api = new Api ({
+const api = new Api ({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-19',
   // userId: '486f4cfdd86508efc4a3eb06',// сервер не работал. убрана привязка по id
   headers: {
@@ -109,3 +109,5 @@ export const api = new Api ({
     'Content-Type': 'application/json'
 }
 });
+
+export default api;

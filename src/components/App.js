@@ -56,10 +56,10 @@ function App() {
       />
       <Footer />
       <PopupWhithForm
+        onClose={closeAllPopups}
         title="Редактировать профиль"
         name="edit"
         isOpen={isEditProfilePopupOpen}
-        onClose={closeAllPopups}
         onSubmit={`Сохранить`}
       >
         <input
@@ -92,10 +92,10 @@ function App() {
       </PopupWhithForm>
 
       <PopupWhithForm
+        onClose={closeAllPopups}
         title="Новое место"
         name="add"
         isOpen={isAddPlacePopupOpen}
-        onClose={closeAllPopups}
         onSubmit={`Создать`}
       >
         <input
@@ -124,10 +124,10 @@ function App() {
       </PopupWhithForm>
 
       <PopupWhithForm
+        onClose={closeAllPopups}
         title="Обновить аватар"
         name="avatar"
         isOpen={isEditAvatarPopupOpen}
-        onClose={closeAllPopups}
         onSubmit={`Сохранить`}
       >
         <input
@@ -146,17 +146,17 @@ function App() {
       </PopupWhithForm>
 
       <PopupWhithForm
+        onClose={closeAllPopups}
         title="Вы уверены?"
         name="delete-place"
         isOpen={false}
-        onClose={closeAllPopups}
         onSubmit={`Да`}
       ></PopupWhithForm>
 
       <ImagePopup
+        onClose={closeAllPopups}
         card={selectedCard}
         isOpen={isImagePopupOpen}
-        onClose={closeAllPopups}
       />
     </div>
   );
