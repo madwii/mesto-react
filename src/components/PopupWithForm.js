@@ -1,6 +1,6 @@
 import React from "react";
 
-function PopupWhithForm(props) {
+function PopupWithForm(props) {
   return (
     <section
       className={`popup popup_type_${props.name} 
@@ -23,4 +23,4 @@ function PopupWhithForm(props) {
   );
 }
 
-export default PopupWhithForm;
+export default PopupWithForm;

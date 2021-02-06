@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header.js";
 import Main from "./Main.js";
 import Footer from "./Footer.js";
-import PopupWhithForm from "./PopupWithForm.js";
+import PopupWithForm from "./PopupWithForm.js";
 import ImagePopup from "./ImagePopup.js";
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
         onCardClick={handleCardClick}
       />
       <Footer />
-      <PopupWhithForm
+      <PopupWithForm
         onClose={closeAllPopups}
         title="Редактировать профиль"
         name="edit"
@@ -89,9 +89,9 @@ function App() {
           className="error"
           aria-live="polite"
         ></span>
-      </PopupWhithForm>
+      </PopupWithForm>
 
-      <PopupWhithForm
+      <PopupWithForm
         onClose={closeAllPopups}
         title="Новое место"
         name="add"
@@ -121,9 +121,9 @@ function App() {
         />
 
         <span id="link-card-error" className="error" aria-live="polite"></span>
-      </PopupWhithForm>
+      </PopupWithForm>
 
-      <PopupWhithForm
+      <PopupWithForm
         onClose={closeAllPopups}
         title="Обновить аватар"
         name="avatar"
@@ -143,15 +143,15 @@ function App() {
           className="error"
           aria-live="polite"
         ></span>
-      </PopupWhithForm>
+      </PopupWithForm>
 
-      <PopupWhithForm
+      <PopupWithForm
         onClose={closeAllPopups}
         title="Вы уверены?"
         name="delete-place"
         isOpen={false}
         onSubmit={`Да`}
-      ></PopupWhithForm>
+      ></PopupWithForm>
 
       <ImagePopup
         onClose={closeAllPopups}
