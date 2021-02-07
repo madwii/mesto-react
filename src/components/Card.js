@@ -5,7 +5,7 @@ function Card(props) {
     props.onCardClick(props.card);
   }
   return (
-    <div className="element" key={props.card_id}>
+    <div className="element">
       <div className="element__item">
         <img
           onClick={handleClick}
