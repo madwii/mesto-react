@@ -17,7 +17,7 @@ class Api {
     }
   }
 
-  setUserData(data) {//+
+  setUserInfo(data) {//+
     return fetch(`${this._baseUrl}/users/me`,
       {
         method: "PATCH",
@@ -82,22 +82,22 @@ class Api {
       .then(this._getStatus);
   }
 
-  likeCard(id) {//+
+  likeCard(id, like) {//+
     return fetch(`${this._baseUrl}/cards/likes/${id}`,
       {
-        method: "PUT",
+        method: like ? "PUT" : "DELETE",
         headers: this._headers,
       }).then(this._getStatus);
   }
 
-  dislikeCard(id) {//+
-    return fetch(`${this._baseUrl}/cards/likes/${id}`,
-      {
-        method: "DELETE",
-        headers: this._headers,
-      })
-      .then(this._getStatus);
-  }
+  // dislikeCard(id) {//+
+  //   return fetch(`${this._baseUrl}/cards/likes/${id}`,
+  //     {
+  //       method: "DELETE",
+  //       headers: this._headers,
+  //     })
+  //     .then(this._getStatus);
+  // }
 }
 
 

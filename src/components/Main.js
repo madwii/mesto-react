@@ -1,26 +1,9 @@
 import React from "react";
-import api from "../utils/api.js";
 import Card from "./Card.js";
+import { CurrentUserContext } from "../contexts/CurrentUserContext.js";
 
 function Main(props) {
-  const [userName, setUserName] = React.useState("");
-  const [userDescription, setUserDescription] = React.useState("");
-  const [userAvatar, setUserAvatar] = React.useState("");
-  const [cards, setCards] = React.useState([]);
-
-  React.useEffect(() => {
-    api
-      .getServerData()
-      .then(([userData, initialCards]) => {
-        setUserName(userData.name);
-        setUserDescription(userData.about);
-        setUserAvatar(userData.avatar);
-        setCards(initialCards);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  const currentUser = React.useContext(CurrentUserContext);
 
   return (
     <main>
@@ -31,15 +14,15 @@ function Main(props) {
             onClick={props.onEditAvatar}
           />
           <img
-            src={userAvatar}
-            alt={userName}
+            src={currentUser.avatar}
+            alt={currentUser.name}
             className="profile__image"
           />
         </div>
 
         <div className="profile__description">
-          <h1 className="profile__name">{userName}</h1>
-          <p className="profile__info">{userDescription}</p>
+          <h1 className="profile__name">{currentUser.name}</h1>
+          <p className="profile__info">{currentUser.about}</p>
           <button
             className="profile__edit-button"
             onClick={props.onEditProfile}
@@ -56,9 +39,9 @@ function Main(props) {
       </section>
 
       <section className="elements">
-        {cards.map((card) => {
+        {props.cards.map((card) => {
           return (
-            <Card key={card._id} card={card} onCardClick={props.onCardClick} />
+            <Card key={card._id} card={card} onCardClick={props.onCardClick} onCardDelete={props.onCardDelete} onCardLike={props.onCardLike} />//+onCardDelete & onCardLike
           );
         })}
       </section>
