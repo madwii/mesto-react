@@ -5,6 +5,11 @@ function AddPlacePopup(props) {
   const [placeName, setPlaceName] = React.useState("");
   const [placeLink, setPlaceLink] = React.useState("");
 
+  React.useEffect(() => {
+    setPlaceName("");
+    setPlaceLink("");
+  }, [props.isOpen])
+
   function handleAddPlaceName(evt) {
     setPlaceName(evt.target.value);
   }
@@ -30,7 +35,7 @@ function AddPlacePopup(props) {
       name="add"
     >
       <input
-        value={placeName ? placeName : ""}
+        value={placeName || ""}
         onChange={handleAddPlaceName}
         type="text"
         className="popup__input popup__input_type_add"
@@ -45,7 +50,7 @@ function AddPlacePopup(props) {
       <span id="new-card-error" className="error" aria-live="polite"></span>
 
       <input
-        value={placeLink ? placeLink : ""}
+        value={placeLink || ""}
         onChange={handleAddPlaceLink}
         type="url"
         className="popup__input popup__input_type_link"
