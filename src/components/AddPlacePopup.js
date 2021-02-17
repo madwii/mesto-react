@@ -10,12 +10,12 @@ function AddPlacePopup(props) {
     setPlaceLink("");
   }, [props.isOpen])
 
-  function handleAddPlaceName(evt) {
-    setPlaceName(evt.target.value);
+  function handleAddPlaceName(e) {
+    setPlaceName(e.target.value);
   }
 
-  function handleAddPlaceLink(evt) {
-    setPlaceLink(evt.target.value);
+  function handleAddPlaceLink(e) {
+    setPlaceLink(e.target.value);
   }
 
   function handleSubmit(e) {
